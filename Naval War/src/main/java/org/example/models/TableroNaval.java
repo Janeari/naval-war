@@ -1,11 +1,12 @@
 package org.example.models;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 public class TableroNaval extends Tablero {
 
-    private static final List<Character> COLUMNAS = new ArrayList();
+    public static final List<Character> COLUMNAS = new LinkedList<>();
 
     static {
         COLUMNAS.add('A');
@@ -23,10 +24,15 @@ public class TableroNaval extends Tablero {
         super(10, 10);
     }
 
+    public void aniadirBarco(Position posicionInical, boolean horizontal, TipoCelda tipoCelda) {
+        cells.replace(posicionInical, new Celda(tipoCelda));
+
+    }
+
     @Override
     protected void generateCells() {
         for(Character columna : COLUMNAS) {
-            for(int fila = 0; fila <= 10; fila++) {
+            for(int fila = 0; fila < heigh; fila++) {
                 cells.put(new Position(fila + 1, columna.charValue()), new Celda(TipoCelda.AGUA));
             }
         }

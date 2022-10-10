@@ -16,6 +16,18 @@ public abstract class Tablero {
         generateCells();
     }
 
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeigh() {
+        return heigh;
+    }
+
+    public Map<Position, Celda> getCells() {
+        return cells;
+    }
+
     protected abstract void generateCells();
 
     @Override

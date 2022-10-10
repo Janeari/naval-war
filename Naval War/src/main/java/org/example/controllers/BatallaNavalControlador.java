@@ -2,6 +2,8 @@ package org.example.controllers;
 
 import org.example.models.BatallaNaval;
 import org.example.models.Jugador;
+import org.example.models.Position;
+import org.example.models.TipoCelda;
 
 public class BatallaNavalControlador {
     private BatallaNaval batallaNaval;
@@ -18,6 +20,18 @@ public class BatallaNavalControlador {
     }
 
     public void iniciarJuego() {
-        batallaNaval.iniciar();
+        //batallaNaval.iniciar();
+    }
+    public BatallaNaval getBatallaNaval() {
+        return batallaNaval;
+    }
+
+    private void aniadirBarco(Jugador jugador, String pos, boolean horizontal, TipoCelda portaAviones) {
+        Position positionIncial = new Position(Integer.valueOf(pos.charAt(1)).intValue(), pos.charAt(0));
+
+
+    }
+
+    public void aniadirBarcoJugador1(String pos, boolean b, TipoCelda portaAviones) {
     }
 }
