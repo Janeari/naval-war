@@ -8,13 +8,19 @@ public enum TipoCelda {
     SUBMARINO('S',3),
     DESTRUCTOR('D',2);
 
-    private char symbol;
-    private int cellNumber;
+    private final char symbol;
+    private final int cellNumber;
 
     private TipoCelda(char symbol, int cellNumber) {
         this.symbol = symbol;
         this.cellNumber = cellNumber;
     }
 
+    public char getSymbol() {
+        return symbol;
+    }
 
+    public int getCellNumber() {
+        return cellNumber;
+    }
 }

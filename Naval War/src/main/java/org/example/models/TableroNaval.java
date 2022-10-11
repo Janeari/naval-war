@@ -26,6 +26,25 @@ public class TableroNaval extends Tablero {
 
     public void aniadirBarco(Position posicionInical, boolean horizontal, TipoCelda tipoCelda) {
         cells.replace(posicionInical, new Celda(tipoCelda));
+        {
+            if (horizontal) {
+                int indexInicial = COLUMNAS.indexOf(posicionInical.getColumn()) + 1;
+                int indexFinal = tipoCelda.getCellNumber() - 1;
+                List<Character> subList = COLUMNAS.subList(indexInicial, indexInicial + indexFinal);
+                for (Character columna : subList) {
+                    Position position = new Position(posicionInical.getRow(), columna.charValue());
+                    cells.replace(position, new Celda(tipoCelda));
+                }
+            } else {
+                int filaIncial = posicionInical.getRow() + 1;
+                int filaFinal = posicionInical.getRow() + tipoCelda.getCellNumber();
+                for (int fila = filaIncial; fila < filaFinal; fila++) {
+                    Position position = new Position(fila, posicionInical.getColumn());
+                    cells.replace(position, new Celda(tipoCelda));
+                }
+
+            }
+        }
 
     }
 

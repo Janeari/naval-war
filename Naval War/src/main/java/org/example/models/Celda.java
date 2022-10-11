@@ -6,4 +6,12 @@ public class Celda {
     public Celda(TipoCelda content) {
         this.content = content;
     }
+
+    public TipoCelda getContent() {
+        return content;
+    }
+
+    public void setContent(TipoCelda content) {
+        this.content = content;
+    }
 }

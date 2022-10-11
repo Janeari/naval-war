@@ -27,11 +27,17 @@ public class BatallaNavalControlador {
     }
 
     private void aniadirBarco(Jugador jugador, String pos, boolean horizontal, TipoCelda portaAviones) {
-        Position positionIncial = new Position(Integer.valueOf(pos.charAt(1)).intValue(), pos.charAt(0));
-
+        String row = pos.substring(1);
+        Position positionIncial = new Position(Integer.valueOf(row).intValue(), pos.charAt(0));
+        jugador.getMiTablero().aniadirBarco(positionIncial, horizontal, portaAviones);
 
     }
 
     public void aniadirBarcoJugador1(String pos, boolean b, TipoCelda portaAviones) {
+        aniadirBarco(getBatallaNaval().getJugador1(), pos, b, portaAviones);
+    }
+
+    public void aniadirBarcoJugador2(String pos, boolean b, TipoCelda portaAviones) {
+        aniadirBarco(getBatallaNaval().getJugador2(), pos, b, portaAviones);
     }
 }
